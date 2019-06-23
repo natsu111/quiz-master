@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 gem 'devise'
+#deviseの日本語化用
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'font-awesome-rails'
 
 gem 'bootstrap-sass', '3.3.7'
 
