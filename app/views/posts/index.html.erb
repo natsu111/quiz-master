@@ -7,15 +7,17 @@
 <ul>
 <% @posts.each do |post| %>
     <li>
+
     <p>
-    <%= post.content %>
-    <%= link_to "答えをみる", post_path(post) %>
-    </p>
-    <%# link_to "[編集]", edit_post_path(post) %>
     <%= link_to "[×]",
         post_path(post),
         method: :delete,
         data: { confirm: "クイズを削除しますか？" } %>
+    <%= post.content %>
+    <%= link_to "答えをみる", post_path(post) %>
+    </p>
+    <%# link_to "[編集]", edit_post_path(post) %>
+
     </li>
  <% end %>
 </ul>
