@@ -7,10 +7,10 @@
 <ul>
 <% @posts.each do |post| %>
     <li>
-    <p>
+    <h3>
     <%= post.content %>
     <%= link_to "答えをみる", post_path(post) %>
-    </p>
+    </h3>
     <%# link_to "[編集]", edit_post_path(post) %>
     <%= link_to "[×]",
         post_path(post),
