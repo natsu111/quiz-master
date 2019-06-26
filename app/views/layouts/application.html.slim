@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title
+      | Quiz
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    nav.navbar.navbar-default
+      .container-fluid
+        - # link_to "クイズアプリ", root_path
+        ul.nav.navbar-nav
+          - if user_signed_in?
+            li
+              = link_to "クイズアプリ", root_path
+            li
+              = link_to "Log Out", destroy_user_session_path, method: :delete
+          - else
+            li
+              = link_to "クイズアプリ", root_path
+            li
+              = link_to "Sign Up", new_user_registration_path
+            li
+              = link_to "Log In", new_user_session_path
+    = notice
+    = alert
+    = yield

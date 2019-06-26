@@ -1,0 +1,9 @@
+h2
+  | クイズを編集
+= form_for @post, url: post_path(@post) do |f|
+  p
+    = f.text_area :content, placeholder: '問題を書いてください'
+  p
+    = f.text_area :answer, placeholder: '答えを書いてください'
+  p
+    = f.submit
