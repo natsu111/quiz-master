@@ -13,7 +13,8 @@ html
   body
     nav
       .nav-wrapper
-        a.brand-logo= link_to "クイズアプリ", root_path
+        / a.brand-logo= link_to "クイズアプリ", root_path
+        a.brand-logo= link_to image_tag("quizlogo.png", alt: "クイズアプリ"), root_path
         ul#nav-mobile.right.hide-on-med-and-down
 
           - if user_signed_in?
