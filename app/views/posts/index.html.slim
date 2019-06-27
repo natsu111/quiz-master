@@ -1,16 +1,16 @@
 h2
   | これはクイズアプリです
 .addquiz
-  h3
+  h4
 
-h3
+h4
 
 
   ul
    .box
     .img-a
       = link_to "クイズを作る", new_post_path, class: 'btn btn-default'
-    h3 クイズ一覧
+    h4 クイズ一覧
     - @posts.each do |post|
 
       li.post

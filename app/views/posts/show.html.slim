@@ -1,6 +1,44 @@
-h2
-  | 問題: 
-  = @post.content
-h2
-  | 答え: 
-  = @post.answer
+/ h2
+/   | 問題:
+/   = @post.content
+/ h2
+/   | 答え:
+/   = @post.answer
+
+/ .row
+/   .col.m3
+/     .collection
+/       - @posts.each do |post|
+/         = link_to post.content, post, :class => 'collection-item'
+
+
+body
+  .row
+    .col.m3
+      .collection
+        - @posts.each do |post|
+          = link_to post.content, post, :class => 'collection-item'
+
+    .col.m9
+      .row
+        .col.s12.m6
+          .card.white
+            .card-content.black-text
+            p.span.card-title
+              | 問題:#{@post.content}
+            p.span.card-title
+              | 答え:#{@post.answer}
+
+            .card-action
+              = link_to "前のクイズ", @prev_post
+              span.right
+                = link_to "次のクイズ", @next_post
+
+/ if !@prev_post.nil?
+/ if !@next_post.nil?
+
+/ span.card-title= @post.content
+/               span.card-title= @post.answer
+
+
+

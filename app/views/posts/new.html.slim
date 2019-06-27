@@ -1,17 +1,21 @@
-h2
-  | クイズを作る
-= form_for :post, url: posts_path do |f|
-  p
-    = f.text_area :content, placeholder: '問題を書いてください'
-  p
-    = f.text_area :answer, placeholder: '答えを書いてください'
-  p
-    = f.submit("クイズを作成")
-- if @post.errors.messages[:content].any?
-  span.error
-    | クイズ
-    = @post.errors.messages[:content][0]
-- if @post.errors.messages[:answer].any?
-  span.error
-    | 答え
-    = @post.errors.messages[:answer][0]
+  h2 クイズを作る
+  .flex
+    .makecontainer
+      .makebox
+        = form_for :post, url: posts_path do |f|
+
+          p
+            = f.text_area :content, placeholder: '問題を書いてください'
+          p
+            = f.text_area :answer, placeholder: '答えを書いてください'
+          p
+          .bobo
+            = f.submit("クイズを作成")
+  - if @post.errors.messages[:content].any?
+    span.error
+      | クイズ
+      = @post.errors.messages[:content][0]
+  - if @post.errors.messages[:answer].any?
+    span.error
+      | 答え
+      = @post.errors.messages[:answer][0]
