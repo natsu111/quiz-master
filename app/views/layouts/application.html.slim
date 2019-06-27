@@ -11,28 +11,41 @@ html
     link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet" /
     script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
   body
-    nav
-      .nav-wrapper
-        / a.brand-logo= link_to "クイズアプリ", root_path
-        a.brand-logo= link_to image_tag("quizlogo.png", alt: "クイズアプリ"), root_path
-        ul#nav-mobile.right.hide-on-med-and-down
-
-          - if user_signed_in?
-
-            li
-              = link_to "Log Out", destroy_user_session_path, method: :delete
-          - else
-
-            li
-              = link_to "Sign Up", new_user_registration_path
-            li
-              = link_to "Log In", new_user_session_path
+    .wrap
+      = render 'layouts/header'
+      .container
+        = yield
+      = render 'layouts/footer'
 
 
 
-    = notice
-    = alert
-    = yield
+
+    / #wrap
+    /   nav
+    /     .nav-wrapper
+    /       / a.brand-logo= link_to "クイズアプリ", root_path
+    /       a.brand-logo= link_to image_tag("quizlogo.png", alt: "クイズアプリ"), root_path
+    /       ul#nav-mobile.right.hide-on-med-and-down
+
+    /         - if user_signed_in?
+
+    /           li
+    /             = link_to "Log Out", destroy_user_session_path, method: :delete
+    /         - else
+
+    /           li
+    /             = link_to "Sign Up", new_user_registration_path
+    /           li
+    /             = link_to "Log In", new_user_session_path
+    /   #contents
+    /     = notice
+    /     = alert
+    /     = yield
+
+
+
+
+
 
 / .nav.navbar-nav
 
