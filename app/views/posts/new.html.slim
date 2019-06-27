@@ -11,11 +11,12 @@
           p
           .bobo
             = f.submit("クイズを作成")
-  - if @post.errors.messages[:content].any?
-    span.error
-      | クイズ
-      = @post.errors.messages[:content][0]
-  - if @post.errors.messages[:answer].any?
-    span.error
-      | 答え
-      = @post.errors.messages[:answer][0]
+  .makequizerror
+    - if @post.errors.messages[:content].any?
+      span.error
+        | クイズ
+        = @post.errors.messages[:content][0]
+    - if @post.errors.messages[:answer].any?
+      span.error
+        | 答え
+        = @post.errors.messages[:answer][0]
